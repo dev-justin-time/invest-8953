@@ -11,8 +11,14 @@ export const base = coreBase.use(async ({ next, path }) => {
   } catch (error) {
     if (!(error instanceof ORPCError)) {
       const message = error instanceof Error ? error.message : String(error);
-      const cause = error instanceof Error && error.cause instanceof Error ? error.cause.message : undefined;
-      console.error(`[api] fault in ${path.join(".")}: ${message}${cause ? ` (cause: ${cause})` : ""}`);
+      const causes: string[] = [];
+      let current: unknown = error instanceof Error ? error.cause : undefined;
+      while (current && causes.length < 4) {
+        const c = current as { message?: string; code?: string; cause?: unknown };
+        causes.push([c.code, c.message].filter(Boolean).join(": ") || String(current));
+        current = c.cause;
+      }
+      console.error(`[api] fault in ${path.join(".")}: ${message.split("\n")[0]}${causes.length ? ` | cause: ${causes.join(" <- ")}` : ""}`);
     }
     throw error;
   }
