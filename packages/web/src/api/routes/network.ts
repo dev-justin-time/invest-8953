@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { base } from "../__core/app";
+import { base } from "../middleware/errors";
 import { db } from "../database";
 import * as schema from "../database/schema";
 import {

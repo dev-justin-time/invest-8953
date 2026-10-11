@@ -1,3 +1,3 @@
-import { base } from "../__core/app";
+import { base } from "../middleware/errors";
 
 export const ping = base.handler(() => ({ message: `Pong! ${Date.now()}` }));

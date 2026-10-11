@@ -2,7 +2,7 @@ import { z } from "zod";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { ORPCError } from "@orpc/server";
 import { logDecision } from "../lib/log";
-import { base } from "../__core/app";
+import { base } from "../middleware/errors";
 import { db } from "../database";
 import * as schema from "../database/schema";
 import { daysFromNow, houseFeeCents } from "../lib/economy";

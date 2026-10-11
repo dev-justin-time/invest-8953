@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { and, desc, eq, inArray } from "drizzle-orm";
 import { ORPCError } from "@orpc/server";
-import { base } from "../__core/app";
+import { base } from "../middleware/errors";
 import { db } from "../database";
 import * as schema from "../database/schema";
 import { houseFeeCents } from "../lib/economy";

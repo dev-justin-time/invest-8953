@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { desc, eq, sql } from "drizzle-orm";
 import { ORPCError } from "@orpc/server";
-import { base } from "../__core/app";
+import { base } from "../middleware/errors";
 import { db } from "../database";
 import * as schema from "../database/schema";
 import { addLedger, getMember } from "../lib/helpers";
