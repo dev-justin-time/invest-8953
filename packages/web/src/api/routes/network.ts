@@ -1,6 +1,6 @@
 import { sql } from "drizzle-orm";
 import { base } from "../middleware/errors";
-import { db } from "../database";
+import { db } from "../database/client";
 import * as schema from "../database/schema";
 import {
   CANCEL_CLAWBACK_RATE,

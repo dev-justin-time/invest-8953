@@ -1,6 +1,6 @@
 import { ORPCError } from "@orpc/server";
 import { eq } from "drizzle-orm";
-import { db } from "../database";
+import { db } from "../database/client";
 import * as schema from "../database/schema";
 import { RESERVE_RATE } from "./economy";
 import { logDecision } from "./log";

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { and, eq, sql } from "drizzle-orm";
 import { base } from "../middleware/errors";
-import { db } from "../database";
+import { db } from "../database/client";
 import * as schema from "../database/schema";
 import { runDistribution } from "./payouts";
 import { ESCROW_FEE_CENTS, daysFromNow, pitchFeeCents, pointValueForStage } from "../lib/economy";

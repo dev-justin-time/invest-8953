@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { expo } from "@better-auth/expo";
 import { runableManagedAuth } from "@runablehq/managed-auth/server";
-import { db } from "./database";
+import { db } from "./database/client";
 
 /**
  * Trusted origins are an explicit allow-list: the configured site URL, the local dev

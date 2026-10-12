@@ -3,7 +3,7 @@ import { desc, eq } from "drizzle-orm";
 import { ORPCError } from "@orpc/server";
 import { logDecision } from "../lib/log";
 import { base } from "../middleware/errors";
-import { db } from "../database";
+import { db } from "../database/client";
 import * as schema from "../database/schema";
 import { TEMPLATES, renderDocument, templateFor } from "../lib/ip-templates";
 import { addLedger, debitWallet, getMember, takeHouseFee } from "../lib/helpers";
